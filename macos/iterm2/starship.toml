@@ -1,0 +1,39 @@
+# Put everything on a single line
+add_newline = false
+
+# Display only these modules: directory, branch, status, character
+format = "$directory$git_branch$git_status $character "
+
+"$schema" = "https://starship.rs/config-schema.json"
+
+[directory]
+style = "blue"
+
+[git_branch]
+symbol = " "  # or " ", or any other branch icon
+style = "bold green"
+format = "[$symbol$branch]($style)"
+
+[git_status]
+format = '[${ahead}${behind}${modified}${conflicted}${stashed}${deleted}${renamed}${staged}${untracked}]($style)'
+style = "bold yellow"
+conflicted = "🔀"
+ahead = "⇡$count"
+behind = "⇣$count"
+untracked = "🆕"
+stashed = "📦"
+modified = "✏️"
+staged = "📝"
+renamed = "➡️"
+deleted = "❌"
+up_to_date = "✔"
+
+[character]
+# Replaced  with a simple arrow
+format = "[$symbol](bold) "
+success_symbol = "[> ](bold green)"
+error_symbol = "[> ](bold red)"
+disabled = false
+
+[package]
+disabled = false

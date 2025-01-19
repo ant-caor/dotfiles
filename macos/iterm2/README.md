@@ -1,44 +1,55 @@
-# Setting Up iTerm2 on Mac
+# macOS Setup Scripts
 
-This guide describes how to set up iTerm2 using a bash script that automates the installation and configuration process. The script file `setup_iterm2.sh` is located in the same directory as this Markdown file.
+This folder contains scripts and configuration files for **automating** the setup and configuration of macOS environments. These scripts ensure that essential software is installed and key system settings are configured for a smooth developer experience.
 
-## Prerequisites
+## Usage
 
-Before running the script, ensure you have the following:
-- **Homebrew**: The script uses Homebrew to install iTerm2. If Homebrew is not installed, the script will attempt to install it.
-- **Administrative access**: Installing Homebrew and iTerm2 requires admin rights on the machine.
+1. **Prepare Your Environment**
 
-## Installation Steps
+   - **Administrative Access**: Make sure you have sudo privileges (or an admin account) to install software system-wide.
+   - **Prerequisites**: Some scripts assume you have [Homebrew](https://brew.sh/) installed. If not, the scripts may attempt to install it automatically.
 
-1. **Make the Script Executable**
+2. **Run Setup Scripts**
 
-   Open Terminal and navigate to the directory containing this Markdown and the script file. Run the following command to make the script executable:
+   To run a script, open your terminal, navigate to this directory, make the script executable (if it isn’t already), and then execute it. For example:
 
    ```bash
-   chmod +x setup_iterm2.sh
+   chmod +x script-name.sh
+   ./script-name.sh
    ```
 
-    This command changes the script's permissions, allowing it to be executed.
+   Each script will typically install applications, fonts, libraries, or plugins as defined in its instructions or inline comments.
 
-2. **Run the script**
+## What Gets Installed?
 
-    Once the script is executable, you can run it to install and configure iTerm2. In the Terminal, still within the directory containing the script, execute it by typing:
+Depending on the script you run, you can expect some or all of the following:
 
-    ```bash
-    ./setup_iterm2.sh
-    ```
+- **iTerm2**  
+  A powerful, customizable terminal emulator for macOS.
 
-    *What the script does*
+- **Nerd Fonts**  
+  - **FiraMono Nerd Font** (for normal ASCII text)
+  - **Symbols Nerd Font** (for extended glyphs and icons)
+  - **Powerline Symbols** (legacy powerline characters)
 
-    - Checks for Homebrew: It checks if Homebrew is installed and installs it if it isn't.
-    - Installs iTerm2: It checks if iTerm2 is already installed and installs it if necessary.
-    - Applies Preferences: The script tries to find and apply your custom iTerm2 preferences from the specified dotfiles directory.
-    - Uses Default Preferences: If the custom preferences file is not found, it applies a default set stored in the same directory.
+  These fonts ensure you can see all powerline icons, branch glyphs, and emoji in your shell prompt without missing characters.
 
-3. **Verify installation**
+- **Shell Plugins**  
+  - **zsh-syntax-highlighting**: Highlights commands as you type, based on the correctness or existence of the command.  
+  - **zsh-autosuggestions**: Suggests commands as you type, based on your history and completions.
 
-    After the script completes, open iTerm2 to check if it reflects the preferences applied. If not, you may need to manually restart iTerm2 or your computer to ensure all settings are refreshed.
+- **Starship Prompt**  
+  A minimal, blazing-fast shell prompt that displays useful information (e.g., Git status, directory path, language versions). Our included `starship.toml` configuration can show Git emoji statuses, among other customizations.
 
+## Additional Notes
 
+- **Fonts and Glyphs**  
+  If you see squares or missing icons in your terminal, ensure iTerm2 is configured to use the correct fonts (under **Preferences → Profiles → Text**, pick **FiraMono Nerd Font** for ASCII text and **Symbols Nerd Font** for non-ASCII).
 
+- **Shell Configuration**  
+  The scripts may modify your `~/.zshrc` or `~/.bashrc` (or `~/.bash_profile`) to load Starship, syntax-highlighting, and autosuggestions. You can open a new shell or run `source ~/.zshrc` (or the relevant file) to apply changes immediately.
+
+---
+
+For more details about each script’s functionality, please refer to the script’s inline comments or usage instructions. Happy macOS configuring!
 
