@@ -68,8 +68,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git "$HOME/.oh-my-zsh
 # ----------------------------------------------------
 # 7. Configure iTerm2 working directory and font settings
 # ----------------------------------------------------
-if [ -d "$HOME/Documents/Github" ]; then
-    defaults write com.googlecode.iterm2 "New Bookmarks" -array-add '{ "Custom Directory" = "Yes"; "Working Directory" = "'$HOME/Documents/Github'"; "Normal Font" = "MesloLGS NF Regular 14"; "Non Ascii Font" = "MesloLGS NF Regular 14"; }'
+if [ -d "$HOME/Documents/GitHub" ]; then
+    defaults write com.googlecode.iterm2 "New Bookmarks" -array-add '{ "Custom Directory" = "Yes"; "Working Directory" = "'$HOME/Documents/GitHub'"; "Normal Font" = "MesloLGS NF Regular 14"; "Non Ascii Font" = "MesloLGS NF Regular 14"; }'
 fi
 
 # ----------------------------------------------------
